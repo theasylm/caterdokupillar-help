@@ -1,0 +1,6 @@
+{
+  "puzzles": [
+    { "title": "Face of Eternity", "author": "theasylm", "rules": "Normal 6x6 Sudoku rules apply. Place the digits 1-6 exactly once in every row, column, and 2x3 box.\n\nNormal Japanese Sums rules apply. Colors used in this puzzle are Green, Red, Black, Yellow. For best results, remove all unshaded marking you have done once completed.\n\nJapanese Sums rules: The squares outside the grid indicate the order of the runs of contiguous cells that must be shaded the color of the clue. The number in the square indicates the sum of the cells in the run. There must be at least one unshaded cell between runs of the same color, but that is not required for runs of different colors. All shaded runs are given.", "digits": "1234" },
+    { "title": "Next puzzle", "author": "setter2", "rules": "rules text", "digits": "6543" }
+  ]
+}
