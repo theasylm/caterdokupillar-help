@@ -26,7 +26,7 @@
         <h3>{{ puzzle.originalIndex + 1 }}. {{ puzzle.title }}</h3>
         <h3>by {{ puzzle["author"] }}</h3>
       </div>
-      <v-expansion-panels variant="accordion" multiple v-model="openPanels[index]">
+      <v-expansion-panels variant="accordion" multiple v-model="openPanels[puzzle.originalIndex]">
         <v-expansion-panel :key="rulesKey(puzzle.originalIndex)" title="Rules">
           <v-expansion-panel-text>
             <!-- Use v-html to render HTML content -->
