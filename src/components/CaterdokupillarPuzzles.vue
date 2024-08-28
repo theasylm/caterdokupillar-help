@@ -6,9 +6,6 @@
     <p>Furthermore, if the unthinkable should happen and you get stuck on a particular puzzle, don't fret, as that's where this document comes in. It not only contains the rules for each puzzle, but most importantly, it has the digits you need for the next grid available for viewing.</p>
     <v-container max-width="100%">
       <v-row>
-        <v-col cols="2">
-          <v-btn class="mt-4" @click="closeAllPanels" size="x-large">Close All Rules</v-btn>
-        </v-col>
         <v-col>
           <v-text-field
             v-model="searchQuery"
@@ -16,6 +13,12 @@
             class="mt-4"
             clearable
           ></v-text-field>
+        </v-col>
+        <v-col cols="4">
+          <v-btn class="mt-4" @click="openAllPanels" size="x-large">Open All Selected Puzzles' Rules</v-btn>
+        </v-col>
+        <v-col cols="2">
+          <v-btn class="mt-4" @click="closeAllPanels" size="x-large">Close All Rules</v-btn>
         </v-col>
       </v-row>
     </v-container>
@@ -105,6 +108,14 @@
       })
       .sort((a, b) => a.originalIndex - b.originalIndex);
   });
+
+  function openAllPanels() {
+    filteredPuzzles.value.forEach(puzzle => {
+      if (!openPanels.value[puzzle.originalIndex].includes(0)) {
+        openPanels.value[puzzle.originalIndex].push(0);
+      }
+    });
+  }
 </script>
 
 <style scoped>
