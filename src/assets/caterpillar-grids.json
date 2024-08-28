@@ -194,7 +194,7 @@
   {
     "title": "All things equal",
     "author": "Sktx",
-    "rules": "Normal 6x6 sudoku rules apply.\n\nEqualines: Digits along each gold line always sum to the same number, to be determined by the solver.",
+    "rules": "Normal 6x6 sudoku rules apply.\n\nEqualines: Digits along each gold line always sum to the same number, which has to be determined by the solver. ",
     "digits": "6231"
   },
   {
@@ -206,25 +206,25 @@
   {
     "title": "Equal Sums",
     "author": "Chris Napolitano",
-    "rules": "Normal 6x6 Sudoku rules apply. \n\nEqualines: The digits on each gold line sum to the same total.",
+    "rules": "Normal 6x6 sudoku rules apply.\n\nEqualines: Digits along each gold line always sum to the same number, which has to be determined by the solver. ",
     "digits": "2165"
   },
   {
     "title": "Sum Caterpillar Trails",
     "author": "Rangsk",
-    "rules": "Normal 6x6 Sudoku rules apply.\n\nRegion Sum Lines: Blue lines in the grid are Region Sum Lines. Lines are split into segments by box borders. Within each individual line, the sum of the digits on each segment is the same. The sum of segments on different lines may or may not be equal.",
+    "rules": "Normal 6x6 Sudoku rules apply.\n\nRegion Sum Lines: Blue lines are split into segments by box borders. Within each individual line, the sum of the digits on each segment is the same. The sum of segments on different lines may or may not be equal.",
     "digits": "6524"
   },
   {
     "title": "Nameless sudoku",
     "author": "Unknown",
-    "rules": "Normal 6x6 sudoku rules apply. \n\nDigits inside cages must sum to the indicated total. Digits must not repeat within cages. \n\nCells marked \"Bx\" must see exactly x cells that match their value a chess Bishop's move away. \n\nCells marked \"Knx\" must see exactly x cells that match their value a chess Knight's move away. \n\nCells marked \"Kix\" must see exactly x cells that match their value a chess King's move away.",
+    "rules": "Normal 6x6 Sudoku rules apply.\n\nKiller Cages: Digits in cages cannot repeat and sum to the value in the top left.\n\nChess Views: Cells marked 'Bx' must see exactly x cells that match their value a chess Bishop's move away. Cells marked 'Knx' must see exactly x cells that match their value a chess Knight's move away. Cells marked 'Kix' must see exactly x cells that match their value a chess King's move away.",
     "digits": "3412"
   },
   {
     "title": "My Phone Number",
     "author": "Lake",
-    "rules": "Normal 6x6 sudoku rules apply.\n\nThe cage is a 'Look-And-Say' cage. The number says how many of each digit are in the cage, e.g. there is exactly 'one 5' and 'three 2s' in the cage.\n\nThis rule does not apply to the cage in the bottom left from the previous grid.",
+    "rules": "Normal 6x6 sudoku rules apply.\n\nLook-and-Say cages: The number in the top left of the cage is split up into pairs. Each pair should be read as 'there are X Ys in the cage'. So for this puzzle, the cage contains one 5, three 2s, etc. The '?' can represent any digit. ",
     "digits": "6521"
   },
   {
@@ -252,7 +252,7 @@
     "digits": "4163"
   },
   {
-    "title": "Nameless sudoku",
+    "title": "Nothing Loop",
     "author": "blackjackfitz",
     "rules": "Undefined",
     "digits": "3254"
@@ -314,7 +314,7 @@
   {
     "title": "Curled Up",
     "author": "RSP",
-    "rules": "Normal 6x6 sudoku rules apply.\n\nGrey lines in the puzzle are modular sequence lines.\nThey contain digits that appear in order with a constant difference. For example: 1-3-5, 1-2-3-4, 2-2-2.\n\nHowever, the digits are counted under mod 6, meaning a 7 in sequence is replaced by a 1 instead, and an 8 by a 2 and so on.\nThis makes the sequence 4-5-6-1-2 possible, for example.",
+    "rules": "Normal 6x6 sudoku rules apply.\n\nWrap-around Sequence Lines: Grey lines in the grid are sequence lines. Along each sequence line is a sequence of digits in order with a constant difference, such as 1234 or 642. This constant difference can be negative but does not change sign, so 242 is not a valid sequence line. The constant difference may be 0, so 444 is a valid sequence line. Each line may have a unique constant difference. \n\nHowever, the digits are counted under mod 6, meaning a 7 in sequence is replaced by a 1 instead, and an 8 by a 2 and so on, it wraps around. This makes the sequence 4-5-6-1-2 possible, for example. ",
     "digits": "1234"
   },
   {
@@ -326,13 +326,13 @@
   {
     "title": "Green and Bear It",
     "author": "Lumos",
-    "rules": "Normal 6x6 sudoku rules apply.\nOn green German Whisper Lines adjacent digits must have a difference of at least 3.",
+    "rules": "Normal 6x6 sudoku rules apply.\n\nGerman Whispers Lines: Adjacent digits along the green lines must have a difference of at least 3.",
     "digits": "6312"
   },
   {
     "title": "Arrow Sudoku",
-    "author": "Mitchell",
-    "rules": "Normal 6x6 sudoku rules apply.\nArrow Sudoku: The digit in a circle is the sum of the digits along the attached arrow. Digits may repeat on an arrow.",
+    "author": "Mitchell Lee",
+    "rules": "Normal 6x6 sudoku rules apply.\n\nArrows: A digit in a circle is equal to the sum of the digits on the attached arrow.  Digits are allowed to repeat along the arrows as normally allowed by other rules.",
     "digits": "4251"
   },
   {
@@ -649,7 +649,7 @@
   {
     "title": "Sequence Lines Sudoku",
     "author": "Awesomesauce",
-    "rules": "Normal 6x6 Sudoku rules apply.\n\nSequence lines: Along a line all pairs of adjacent digits must have the same difference in the same direction (so digits can't increase and decrease on the same line).",
+    "rules": "Normal 6x6 Sudoku rules apply.\n\nSequence lines: Along a line all pairs of adjacent digits must have the same difference in the same direction, whether that is strictly increasing, decreasing, or staying the same.",
     "digits": "3412"
   },
   {
@@ -691,7 +691,7 @@
   {
     "title": "White Space",
     "author": "Fuxia",
-    "rules": "Normal 6x6 Sudoku rules apply.\n\nArrow Sums: A digit in a cell with arrows is the sum of all adjacent cells in the directions of the arrows. Example: If R2C5 is a 5, then R3C4 could be a 2 and R3C6 a 3.",
+    "rules": "Normal 6x6 Sudoku rules apply.\n\nArrow Sums: A digit in a cell with arrows is the sum of all adjacent cells in the directions of the arrows. For example, if R2C5 is a 5, then R3C4 could be a 2 and R3C6 a 3.",
     "digits": "3516"
   },
   {
@@ -703,25 +703,25 @@
   {
     "title": "Parity Party Sudoku",
     "author": "Édouard Lebeau aka SudoKanard",
-    "rules": "Normal 6x6 sudoku rules apply.\nEach number outside the grid is the sum of the first few digits in the corresponding direction, stopping at the first odd digit or the first even digit (included in the sum).",
+    "rules": "Normal 6x6 Sudoku rules apply.\n\nParity Party: Numbers outside the grid show the sum up to and including the first even digit or up to and including the first odd digit. The sum can be made up by a single digit.",
     "digits": "1425"
   },
   {
     "title": "Extra Region Skyscraper",
     "author": "MavericksJD",
-    "rules": "Normal 6x6 sudoku rules apply.\nWithin Green shaded cells, each digit must appear exactly once. Cells outside the grid are Skyscraper clues which means each digit represents a skyscraper of given height. Higher skyscraper blocks the lower one. Digit outside the grid indicates no of Skyscraper visible from that direction.",
+    "rules": "Normal 6x6 sudoku rules apply.\n\nExtra Region: Within green shaded cells, each digit must appear exactly once. \n\nSkyscrapers: Digits in the grid represent skyscrapers, with their values corresponding to their heights. Taller skyscrapers obscure all shorter skyscrapers behind them. Clues outside the grid indicate the number of skyscrapers seen in that row/column, from the line of sight of the clue.",
     "digits": "2614"
   },
   {
     "title": "Matreshka Gusenitsa",
     "author": "Lucian",
-    "rules": "Normal 6x6 sudoku rules apply.\nRussian Doll Sums: In each row with an outside clue, there exists two digits which sum to the clue such that the digit(s) between them also sum to the clue.",
+    "rules": "Normal 6x6 sudoku rules apply.\n\nRussian Doll Sums: Outside clues indicate that there are two digits which sum to the clue and that the digit(s) between them also sum to the clue. For example, a 5 clue could be fulfilled, for instance, by 1234 or 154.",
     "digits": "6534"
   },
   {
-    "title": "Caterdokupillar",
+    "title": "Stitched together",
     "author": "cornishjohn",
-    "rules": "Normal 6x6 sudoku rules apply.\nKropki (no neg), whispers",
+    "rules": "Normal 6x6 Sudoku rules apply.\n\nGerman Whispers Lines: Adjacent digits along the green lines must have a difference of at least 3.\n\nKropki Dots: Digits separated by a black dot have a 1:2 ratio. Not all dots are necessarily given.",
     "digits": "2641"
   },
   {
@@ -751,7 +751,7 @@
   {
     "title": "Killer Sudoku",
     "author": "Sotek",
-    "rules": "No rules provided for this puzzle. Please check the related video or website for rules.",
+    "rules": "Normal 6x6 Sudoku rules apply.\n\nKiller Cages: Digits in cages cannot repeat and sum to the value in the top left.",
     "digits": "4325"
   },
   {
@@ -769,7 +769,7 @@
   {
     "title": "Corners and Kropki",
     "author": "KingOfArrows",
-    "rules": "Normal 6x6 sudoku rules apply.",
+    "rules": "Normal 6x6 sudoku rules apply.\n\nArrows: A digit in a circle is equal to the sum of the digits on the attached arrow.  \n\nKropki Dots: Digits separated by a white dot are consecutive. Digits separated by a black dot have a 1:2 ratio. Not all dots are necessarily given.",
     "digits": "6351"
   },
   {
@@ -799,7 +799,7 @@
   {
     "title": "Sudokupillar",
     "author": "Jay Dyer",
-    "rules": "Normal 6x6 sudoku rules apply. Digits connected by a black dot are in a 1:2 ratio. The blue line is divided into four sections by region boundaries, and each section has the same sum.",
+    "rules": "Normal 6x6 sudoku rules apply. \n\nKropki Dots: Digits separated by a black dot have a 1:2 ratio. Not all dots are necessarily given.\n\nRegion Sum Lines: Blue lines are split into segments by box borders. Within each individual line, the sum of the digits on each segment is the same. The sum of segments on different lines may or may not be equal.",
     "digits": "1536"
   },
   {
@@ -817,25 +817,25 @@
   {
     "title": "Dutch Six",
     "author": "rad",
-    "rules": "Undefined",
+    "rules": "Normal 6x6 sudoku rules apply.\n\nDutch Whispers Lines: Adjacent digits along the orange lines must have a difference of at least 2.\n\nXV Sums: Digits separated by a V must sum to 5.",
     "digits": "4362"
   },
   {
     "title": "Outies",
     "author": "RainbowSprinklez",
-    "rules": "Normal 6x6 sudoku rules apply.\nCells separated by white Kropki Dots are consecutive. Not all dots are necessarily given.\nCells in cages sum to the clue specified.",
+    "rules": "Normal 6x6 sudoku rules apply.\n\nKiller Cages: Digits in cages cannot repeat and sum to the value in the top left.\n\nKropki Dots: Digits separated by a white dot are consecutive. Not all dots are necessarily given.",
     "digits": "2156"
   },
   {
     "title": "Kvell",
     "author": "ZegreS",
-    "rules": "Normal 6x6 sudoku rules apply.",
+    "rules": "Normal 6x6 sudoku rules apply.\n\nRenban Lines: Digits on a purple line form a set of non-repeating, consecutive digits in any order.\n\nThermometers: Digits must strictly increase along the thermometer starting from the bulb end.",
     "digits": "4521"
   },
   {
     "title": "Sandwich",
     "author": "RockyRoer",
-    "rules": "Normal 6x6 sudoku rules apply.\n\nClues outside the grid represent the sum of the digits in the cells sandwiched between the 1 and 6 in that row or column.",
+    "rules": "Normal 6x6 sudoku rules apply.\n\nSandwich Sums: Digits outside the grid indicate the sum of the digits that are placed in-between the 1 and 6 in that row or column.",
     "digits": "2653"
   },
   {
@@ -859,7 +859,7 @@
   {
     "title": "caterdokupillar pozl",
     "author": "PulverizingPancake",
-    "rules": "Normal 6x6 sudoku rules apply.\n\nZipper Lines: Digits an equal distance from the center of a purple line must sum to the same total.",
+    "rules": "Normal 6x6 sudoku rules apply.\n\nZipper Lines: Lavender lines in the grid are zipper lines. Digits equidistant from the line's center must sum to the same value. If a zipper line has an odd number of cells, the central cell's digit defines this sum. Digits may repeat on these lines if allowed by other sudoku rules. For example, a valid zipper line could be 3146253 which has a sum value of 6.",
     "digits": "1526"
   },
   {
@@ -871,7 +871,7 @@
   {
     "title": "Caged Consecutives",
     "author": "Tulrak",
-    "rules": "Normal 6x6 sudoku rules apply.\nDigits in a cage may not repeat.\nDigits along the pink renban line form a set of consecutive non-repeating digits in any order.",
+    "rules": "Normal 6x6 sudoku rules apply.\n\nRenban Lines: Digits on a purple line form a set of non-repeating, consecutive digits in any order.\n\nKiller Cages: Digits in cages cannot repeat.",
     "digits": "4651"
   },
   {
@@ -917,9 +917,9 @@
     "digits": "1352"
   },
   {
-    "title": "Nameless sudoku",
+    "title": "German Whispers Sudoku",
     "author": "BugsCantHide",
-    "rules": "Normal 6x6 sudoku rules apply. Green lines are standard German whisper lines (min. difference of 3).",
+    "rules": "Normal 6x6 sudoku rules apply. \n\nGerman Whispers Lines: Adjacent digits along the green lines must have a difference of at least 3.",
     "digits": "5643"
   },
   {
@@ -937,7 +937,7 @@
   {
     "title": "Caterdokupillar Renban",
     "author": "Lombax999",
-    "rules": "Normal 6x6 sudoku rules apply.\n\nNormal renban rules apply: Pink lines contain a set of consecutive digits in any order.",
+    "rules": "Normal 6x6 sudoku rules apply. \n\nRenban Lines: Digits on a purple line form a set of non-repeating, consecutive digits in any order.",
     "digits": "2516"
   },
   {
@@ -949,19 +949,19 @@
   {
     "title": "M for Massive Clones",
     "author": "Botaku",
-    "rules": "Normal 6x6 sudoku rules apply. The two clones contain the same digits in the same positions.",
+    "rules": "Normal 6x6 sudoku rules apply. \n\nClones: Cages contain exactly the same digits in the same relative positions. Digits are allowed to repeat within the cages as normally allowed by other rules.",
     "digits": "1624"
   },
   {
     "title": "Aileron",
     "author": "Teal",
-    "rules": "Normal 6x6 sudoku rules apply.\nBox borders divide blue Region Sum lines into segments which each have the same sum. Different lines may have different sums.",
+    "rules": "Normal 6x6 sudoku rules apply.\n\nRegion Sum Lines: Blue lines are split into segments by box borders. Within each individual line, the sum of the digits on each segment is the same. The sum of segments on different lines may or may not be equal.",
     "digits": "3415"
   },
   {
     "title": "Nabner kropki sudoku",
     "author": "arctan",
-    "rules": "Normal 6x6 sudoku rules apply. Digits separated by a black dot are in a 1 to 2 ratio. Digits on a yellow nabner line may not repeat, and may not be consecutive with any other digits on that line.",
+    "rules": "Normal 6x6 sudoku rules apply. \n\nNabner Lines: Yellow lines in the grid are Nabner lines. If a digit appears on a line, then the digits consecutive with it do not appear on the line. Digits cannot repeat on a Nabner line. For example, if a 2 appears on the line, then 1 and 3 do not appear on the line, and another 2 also does not appear.\n\nKropki Dots: Digits separated by a black dot have a 1:2 ratio. Not all dots are necessarily given.",
     "digits": "1542"
   },
   {
@@ -973,13 +973,13 @@
   {
     "title": "Crescent Moon",
     "author": "Walker",
-    "rules": "Normal 6x6 sudoku rules apply.",
+    "rules": "Normal 6x6 sudoku rules apply.\n\nArrows: A digit in a circle is equal to the sum of the digits on the attached arrow. ",
     "digits": "6152"
   },
   {
     "title": "German Whispers",
     "author": "Yoshi Baroshi",
-    "rules": "Normal 6x6 sudoku rules apply. Adjacent digits along a green line differ by 3 or more. ",
+    "rules": "Normal 6x6 sudoku rules apply. \n\nGerman Whispers Lines: Adjacent digits along the green lines must have a difference of at least 3.",
     "digits": "2634"
   },
   {
@@ -1009,7 +1009,7 @@
   {
     "title": "Fingers",
     "author": "Rubenscube",
-    "rules": "- Normal 6x6 sudoku rules apply.\n- Along the pink renban lines, the digits form a sequence of consecutive digits in any order.\n- A white dot separates two consecutive digits.",
+    "rules": "Normal 6x6 sudoku rules apply.\n\nRenban Lines: Digits on a purple line form a set of non-repeating, consecutive digits in any order.\n\nKropki Dots: Digits separated by a white dot are consecutive. Not all dots are necessarily given.",
     "digits": "3516"
   },
   {
@@ -1027,7 +1027,7 @@
   {
     "title": "Memristor's disappointment ",
     "author": "Donatello_86 ",
-    "rules": "Normal 6x6 sudoku rules apply.\n\nAdjacent digits on a green line have a minimum difference of three.\n\nDigits in dashed boxes sum to the value in the top left corner. Digits do not repeat in a dashed box.",
+    "rules": "Normal 6x6 sudoku rules apply.\n\nKiller Cages: Digits sum to the value in the top left.\n\nGerman Whispers Lines: Adjacent digits along the green lines must have a difference of at least 3.",
     "digits": "4612"
   },
   {
@@ -1045,6 +1045,24 @@
   {
     "title": "Parity Party",
     "author": "Lulero",
-    "rules": "Normal 6x6 sudoku rules apply.\n\nDigits separated by a white dot are consecutive.\n\nA grey circle (resp. square) denotes an odd (resp. even) digit."
+    "rules": "Normal 6x6 sudoku rules apply.\n\nEven/Odd: Cells containing a grey square are even. Cells containing a grey circle are odd.\n\nKropki Dots: Digits separated by a white dot are consecutive. Not all dots are necessarily given.",
+    "digits": "6153"
+  },
+  {
+    "title": "higher-lower",
+    "author": "paletron",
+    "rules": "Normal 6x6 sudoku rules apply.\nDigits along pink lines alternate higher and lower. I.e. Every digit must be higher or lower than all of its adjacent digits on the line.",
+    "digits": "2541"
+  },
+  {
+    "title": "Renbank",
+    "author": "Dennis Chen",
+    "rules": "Normal 6x6 sudoku rules apply.\n\nRenban Lines: Digits on a purple line form a set of non-repeating, consecutive digits in any order.",
+    "digits": "1653"
+  },
+  {
+    "title": "Box Sum Killer",
+    "author": "Scruffamudda",
+    "rules": "Normal 6x6 sudoku rules apply.\nDigits within cages sum to cage totals to be determined by the solver.\nCages within the same box have the same total.\nCages in different boxes have different totals."
   }
 ]
