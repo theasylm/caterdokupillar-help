@@ -21,7 +21,7 @@
     </v-container>
   </v-sheet>
   <v-sheet class="d-flex flex-wrap bg-surface-variant justify-space-between">
-    <v-sheet class="ma-2 pa-2" elevation="5" rounded="true" v-for="(puzzle, index) in filteredPuzzles" :key="index" max-width="400">
+    <v-sheet class="ma-2 pa-2" elevation="5" rounded="true" v-for="(puzzle, index) in filteredPuzzles" :key="index" width="400">
       <div style="text-align: center;">
         <h3>{{ puzzle.originalIndex + 1 }}. {{ puzzle.title }}</h3>
         <h3>by {{ puzzle["author"] }}</h3>
