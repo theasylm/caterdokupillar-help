@@ -14,10 +14,10 @@
             clearable
           ></v-text-field>
         </v-col>
-        <v-col cols="3" class="d-flex justify-center align-center">
+        <v-col cols="3" class="d-flex justify-center">
           <v-btn class="mt-4" @click="openAllPanels" size="x-large">Open Selected Puzzles' Rules</v-btn>
         </v-col>
-        <v-col cols="3" class="d-flex justify-center align-center">
+        <v-col cols="3" class="d-flex justify-center">
           <v-btn class="mt-4" @click="closeAllPanels" size="x-large">Close All Puzzles' Rules</v-btn>
         </v-col>
       </v-row>
