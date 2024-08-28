@@ -5,7 +5,7 @@
     <p class="margin-bottom">This document is intended to assist you in completing the Caterdokupillar. To complete the Caterdokupillar, start in the top left, and as you complete each grid, you will automatically carry 4 digits over to the next grid as givens for that puzzle. Read the rules carefully for each puzzle, as many contain variants.</p>
     <p>Furthermore, if the unthinkable should happen and you get stuck on a particular puzzle, don't fret, as that's where this document comes in. It not only contains the rules for each puzzle, but most importantly, it has the digits you need for the next grid available for viewing.</p>
     <v-container max-width="100%">
-      <v-row>
+      <v-row justify="center">
         <v-col>
           <v-text-field
             v-model="searchQuery"
@@ -14,11 +14,11 @@
             clearable
           ></v-text-field>
         </v-col>
-        <v-col cols="4">
-          <v-btn class="mt-4" @click="openAllPanels" size="x-large">Open All Selected Puzzles' Rules</v-btn>
+        <v-col cols="3" class="d-flex justify-center align-center">
+          <v-btn class="mt-4" @click="openAllPanels" size="x-large">Open Selected Puzzles' Rules</v-btn>
         </v-col>
-        <v-col cols="2">
-          <v-btn class="mt-4" @click="closeAllPanels" size="x-large">Close All Rules</v-btn>
+        <v-col cols="3" class="d-flex justify-center align-center">
+          <v-btn class="mt-4" @click="closeAllPanels" size="x-large">Close All Puzzles' Rules</v-btn>
         </v-col>
       </v-row>
     </v-container>
