@@ -12,7 +12,7 @@
         <v-col>
           <v-text-field
             v-model="searchQuery"
-            label="Search puzzles by title, author, or number"
+            label="Search puzzles by title, author, rules language or number"
             class="mt-4"
             clearable
           ></v-text-field>
@@ -93,11 +93,13 @@
         // Handle potential null or undefined values by treating them as empty strings
         const title = puzzle.title ? puzzle.title.toLowerCase() : '';
         const author = puzzle.author ? puzzle.author.toLowerCase() : '';
+        const rules = puzzle.rules ? puzzle.rules.toLowerCase() : '';
         const indexString = (puzzle.originalIndex + 1).toString();
 
         return (
           title.includes(searchLower) ||
           author.includes(searchLower) ||
+          rules.includes(searchLower) ||
           indexString.includes(searchLower)
         );
       })
