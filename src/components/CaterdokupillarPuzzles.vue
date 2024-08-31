@@ -26,14 +26,14 @@
   <v-sheet class="d-flex flex-wrap bg-surface-variant">
     <v-sheet class="ma-2 pa-2" elevation="5" rounded="true" v-for="(puzzle, index) in filteredPuzzles" :key="index" width="400">
       <div style="text-align: center;">
-        <h3>{{ puzzle.originalIndex + 1 }}. {{ puzzle.title }}</h3>
-        <h3>by {{ puzzle["author"] }}</h3>
+        <h3><TextSelection :text="puzzle.originalIndex + 1" :selection="searchQuery" />. <TextSelection :text="puzzle.title" :selection="searchQuery"/></h3>
+        <h3>by <TextSelection :text="puzzle.author" :selection="searchQuery" /></h3>
       </div>
       <v-expansion-panels variant="accordion" multiple v-model="openPanels[puzzle.originalIndex]">
         <v-expansion-panel :key="rulesKey(puzzle.originalIndex)" title="Rules">
           <v-expansion-panel-text>
             <div class="multiline">
-              {{ puzzle.rules }}
+              <TextSelection :text="puzzle.rules" :selection="searchQuery" />
             </div>
           </v-expansion-panel-text>
         </v-expansion-panel>
@@ -51,10 +51,11 @@
 <script setup>
   import { ref } from 'vue';
   import puzzles from '@/assets/caterpillar-grids.json';
+  import TextSelection from "@/components/TextSelection.vue";
 
   const searchQuery = ref('');
   const openPanels = ref(puzzles.map(() => [0]));
-  
+
   function formatDigits(digits) {
     if (!digits)
       return ''
@@ -67,7 +68,7 @@
   function rulesKey(index) {
     return `rules-${index}`
   }
-  
+
   function digitsKey(index) {
     return `digits-${index}`
   }
