@@ -26,7 +26,7 @@
   <v-sheet class="d-flex flex-wrap bg-surface-variant">
     <v-sheet class="ma-2 pa-2" elevation="5" rounded="true" v-for="(puzzle, index) in filteredPuzzles" :key="index" width="400">
       <div style="text-align: center;">
-        <h3 v-html="`${puzzle.highlightedIndex}. ${puzzle.highlightedTitle}`"></h3>
+        <h3 v-html="`${puzzle.highlightedIndex} ${puzzle.highlightedTitle}`"></h3>
         <h3 v-html="`by ${puzzle.highlightedAuthor}`"></h3>
       </div>
       <v-expansion-panels variant="accordion" multiple v-model="openPanels[puzzle.originalIndex]">
@@ -52,6 +52,11 @@
   const searchQuery = ref('');
   const openPanels = ref(puzzles.map(() => [0]));
   
+  // Utility function to escape special characters in a regex pattern
+  function escapeRegExp(string) {
+    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  }
+
   function formatDigits(digits) {
     if (!digits)
       return ''
@@ -82,7 +87,8 @@
   const clonedPuzzles =  puzzles.map((puzzle, index) => ({ ...puzzle, originalIndex: index }));
 
   const highlightMatch = (text, query) => {
-    const regex = new RegExp(`(${query})`, 'gi');
+    const escapedQuery = escapeRegExp(query);
+    const regex = new RegExp(`(${escapedQuery})`, 'gi');
     return text.replace(regex, '<mark>$1</mark>');
   };
 
@@ -93,7 +99,7 @@
       highlightedTitle: puzzle.title,
       highlightedAuthor: puzzle.author,
       highlightedRules: formatRules(puzzle.rules),
-      highlightedIndex: (puzzle.originalIndex + 1).toString(),
+      highlightedIndex: `${puzzle.originalIndex + 1}.`
     })).sort((a, b) => a.originalIndex - b.originalIndex);
   }
 
@@ -104,7 +110,7 @@
       const title = puzzle.title ? puzzle.title.toLowerCase() : '';
       const author = puzzle.author ? puzzle.author.toLowerCase() : '';
       const rules = puzzle.rules ? puzzle.rules.toLowerCase() : '';
-      const indexString = (puzzle.originalIndex + 1).toString();
+      const indexString = `${puzzle.originalIndex + 1}.`;
 
       const highlightedTitle = highlightMatch(puzzle.title || '', searchLower);
       const highlightedAuthor = highlightMatch(puzzle.author || '', searchLower);
@@ -123,7 +129,7 @@
       const title = puzzle.title ? puzzle.title.toLowerCase() : '';
       const author = puzzle.author ? puzzle.author.toLowerCase() : '';
       const rules = puzzle.rules ? puzzle.rules.toLowerCase() : '';
-      const indexString = (puzzle.originalIndex + 1).toString();
+      const indexString = `${puzzle.originalIndex + 1}.`;
 
       return (
         title.includes(searchLower) ||
