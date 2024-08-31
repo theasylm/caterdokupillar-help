@@ -26,19 +26,17 @@
   <v-sheet class="d-flex flex-wrap bg-surface-variant">
     <v-sheet class="ma-2 pa-2" elevation="5" rounded="true" v-for="(puzzle, index) in filteredPuzzles" :key="index" width="400">
       <div style="text-align: center;">
-        <h3>{{ puzzle.originalIndex + 1 }}. {{ puzzle.title }}</h3>
-        <h3>by {{ puzzle["author"] }}</h3>
+        <h3 v-html="`${puzzle.highlightedIndex}. ${puzzle.highlightedTitle}`"></h3>
+        <h3 v-html="`by ${puzzle.highlightedAuthor}`"></h3>
       </div>
       <v-expansion-panels variant="accordion" multiple v-model="openPanels[puzzle.originalIndex]">
         <v-expansion-panel :key="rulesKey(puzzle.originalIndex)" title="Rules">
           <v-expansion-panel-text>
-            <!-- Use v-html to render HTML content -->
-            <div v-html="formatRules(puzzle.rules)"></div>
+            <div v-html="puzzle.highlightedRules"></div>
           </v-expansion-panel-text>
         </v-expansion-panel>
         <v-expansion-panel :key="digitsKey(puzzle.originalIndex)" title="Digits">
           <v-expansion-panel-text>
-            <!-- Use v-html to render HTML content -->
             <div v-html="formatDigits(puzzle.digits)"></div>
           </v-expansion-panel-text>
         </v-expansion-panel>
@@ -83,31 +81,59 @@
 
   const clonedPuzzles =  puzzles.map((puzzle, index) => ({ ...puzzle, originalIndex: index }));
 
+  const highlightMatch = (text, query) => {
+    const regex = new RegExp(`(${query})`, 'gi');
+    return text.replace(regex, '<mark>$1</mark>');
+  };
+
   const filteredPuzzles = computed(() => {
-    // If the search query is empty, return the original puzzles array, sorted by originalIndex
-    if (!searchQuery.value || !searchQuery.value.trim()) {
-      return clonedPuzzles.sort((a, b) => a.originalIndex - b.originalIndex);
-    }
+  if (!searchQuery.value || !searchQuery.value.trim()) {
+    return clonedPuzzles.map(puzzle => ({
+      ...puzzle,
+      highlightedTitle: puzzle.title,
+      highlightedAuthor: puzzle.author,
+      highlightedRules: formatRules(puzzle.rules),
+      highlightedIndex: (puzzle.originalIndex + 1).toString(),
+    })).sort((a, b) => a.originalIndex - b.originalIndex);
+  }
 
-    // Otherwise, filter the puzzles based on the search query and sort by originalIndex
-    const searchLower = searchQuery.value.toLowerCase().trim();
-    return clonedPuzzles
-      .filter((puzzle) => {
-        // Handle potential null or undefined values by treating them as empty strings
-        const title = puzzle.title ? puzzle.title.toLowerCase() : '';
-        const author = puzzle.author ? puzzle.author.toLowerCase() : '';
-        const rules = puzzle.rules ? puzzle.rules.toLowerCase() : '';
-        const indexString = (puzzle.originalIndex + 1).toString();
+  const searchLower = searchQuery.value.toLowerCase().trim();
 
-        return (
-          title.includes(searchLower) ||
-          author.includes(searchLower) ||
-          rules.includes(searchLower) ||
-          indexString.includes(searchLower)
-        );
-      })
-      .sort((a, b) => a.originalIndex - b.originalIndex);
-  });
+  return clonedPuzzles
+    .map(puzzle => {
+      const title = puzzle.title ? puzzle.title.toLowerCase() : '';
+      const author = puzzle.author ? puzzle.author.toLowerCase() : '';
+      const rules = puzzle.rules ? puzzle.rules.toLowerCase() : '';
+      const indexString = (puzzle.originalIndex + 1).toString();
+
+      const highlightedTitle = highlightMatch(puzzle.title || '', searchLower);
+      const highlightedAuthor = highlightMatch(puzzle.author || '', searchLower);
+      const highlightedRules = highlightMatch(formatRules(puzzle.rules), searchLower);
+      const highlightedIndex = highlightMatch(indexString, searchLower);
+
+      return {
+        ...puzzle,
+        highlightedTitle,
+        highlightedAuthor,
+        highlightedRules,
+        highlightedIndex,
+      };
+    })
+    .filter(puzzle => {
+      const title = puzzle.title ? puzzle.title.toLowerCase() : '';
+      const author = puzzle.author ? puzzle.author.toLowerCase() : '';
+      const rules = puzzle.rules ? puzzle.rules.toLowerCase() : '';
+      const indexString = (puzzle.originalIndex + 1).toString();
+
+      return (
+        title.includes(searchLower) ||
+        author.includes(searchLower) ||
+        rules.includes(searchLower) ||
+        indexString.includes(searchLower)
+      );
+    })
+    .sort((a, b) => a.originalIndex - b.originalIndex);
+});
 
   function openAllPanels() {
     filteredPuzzles.value.forEach(puzzle => {
