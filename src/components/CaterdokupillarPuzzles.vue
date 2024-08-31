@@ -32,8 +32,9 @@
       <v-expansion-panels variant="accordion" multiple v-model="openPanels[puzzle.originalIndex]">
         <v-expansion-panel :key="rulesKey(puzzle.originalIndex)" title="Rules">
           <v-expansion-panel-text>
-            <!-- Use v-html to render HTML content -->
-            <div v-html="formatRules(puzzle.rules)"></div>
+            <div class="multiline">
+              {{ puzzle.rules }}
+            </div>
           </v-expansion-panel-text>
         </v-expansion-panel>
         <v-expansion-panel :key="digitsKey(puzzle.originalIndex)" title="Digits">
@@ -61,10 +62,6 @@
     const secondHalf = digits.slice(2, 4);
 
     return `${firstHalf}<br/>${secondHalf}`;
-  }
-
-  function formatRules(rules){
-    return rules.replaceAll("\n","<br/>")
   }
 
   function rulesKey(index) {
@@ -127,5 +124,8 @@
   }
   .margin-bottom {
     margin-bottom: 1.5rem;
+  }
+  .multiline {
+    white-space: pre-wrap;
   }
 </style>
