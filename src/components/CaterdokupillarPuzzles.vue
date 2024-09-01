@@ -1,9 +1,9 @@
 <template>
   <v-sheet theme="dark" class="intro">
     <h1 class="margin-bottom">Caterdokupillar Help</h1>
-    <v-img class="mb-4" src="@/assets/logo.png" />
-    <p class="margin-bottom">This document is intended to assist you in completing the Caterdokupillar. To complete the Caterdokupillar, start in the top left, and as you complete each grid, you will automatically carry 4 digits over to the next grid as givens for that puzzle. Read the rules carefully for each puzzle, as many contain variants.</p>
-    <p>Furthermore, if the unthinkable should happen and you get stuck on a particular puzzle, don't fret, as that's where this document comes in. It not only contains the rules for each puzzle, but most importantly, it has the digits you need for the next grid available for viewing.</p>
+    <v-img class="mb-4" src="@/assets/caterdokupillar.svg" />
+    <p class="margin-bottom">This document is intended to assist you in completing the Caterdokupillar. Start in the top left, and as each 6x6 puzzle is completed, 4 digits will automatically carry over as givens for the next puzzle. Read the rules carefully for each puzzle, as many contain variants.</p>
+    <p>Furthermore, if you get stuck on a particular puzzle, don't fret, as that's where this document comes in. It not only contains the rules for each puzzle, but most importantly, it has the digits you need for the next puzzle available for viewing.</p>
     <v-container max-width="100%">
       <v-row justify="center">
         <v-col>
