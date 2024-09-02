@@ -7,7 +7,7 @@
     <map name="image-map">
       <area target="" alt="The Face of Eternity" title="The Face of Eternity" @click="showPuzzle(0)" coords="95,72,175,141" shape="rect">
       <area target="" alt="Apertif" title="Apertif" @click="showPuzzle(1)" coords="221,187,146,124,365,38" shape="rect">
-    </map>  
+    </map>
 
     <p class="margin-bottom">This document is intended to assist you in completing the Caterdokupillar. Start in the top left, and as each 6x6 puzzle is completed, 4 digits will automatically carry over as givens for the next puzzle. Read the rules carefully for each puzzle, as many contain variants.</p>
     <p>Furthermore, if you get stuck on a particular puzzle, don't fret, as that's where this document comes in. It not only contains the rules for each puzzle, but most importantly, it has the digits you need for the next puzzle available for viewing.</p>
@@ -58,7 +58,7 @@
 
   const searchQuery = ref('');
   const openPanels = ref(puzzles.map(() => [0]));
-  
+
   // Utility function to escape special characters in a regex pattern
   function escapeRegExp(string) {
     if ( !string )
@@ -82,7 +82,7 @@
   function rulesKey(index) {
     return `rules-${index}`
   }
-  
+
   function digitsKey(index) {
     return `digits-${index}`
   }
@@ -95,39 +95,37 @@
 
   const clonedPuzzles =  puzzles.map((puzzle, index) => ({ ...puzzle, originalIndex: index }));
 
-  const highlightMatch = (text, query) => {
-    const tokens = query.toLowerCase().trim().split(/\s+/);
-    if (tokens.length === 0) return text;
+  const searchRegexParts = computed(() => {
+    return (searchQuery.value || '').split(' ').filter(s => s !== '').map(escapeRegExp);
+  });
 
-    tokens.forEach(token => {
-      const escapedToken = escapeRegExp(token);
-      const regex = new RegExp(`(${escapedToken})`, 'gi');
-      text = text.replace(regex, '<mark>$1</mark>');
-    });
+  const highlightMatch = (text) => {
+    if (!searchRegexParts.value.length) {
+      return text;
+    }
 
-    return text;
+    const regex = new RegExp(`(${searchRegexParts.value.join('|')})`, 'gi');
+    return text.replace(regex, '<mark>$1</mark>');
   };
 
   const filteredPuzzles = computed(() => {
-    if (!searchQuery.value || !searchQuery.value.trim()) {
-      return clonedPuzzles.map(puzzle => ({
-        ...puzzle,
-        highlightedTitle: puzzle.title,
-        highlightedAuthor: puzzle.author,
-        highlightedRules: formatRules(puzzle.rules),
-        highlightedIndex: `${puzzle.originalIndex + 1}.`
-      })).sort((a, b) => a.originalIndex - b.originalIndex);
-    }
-
-    const tokens = searchQuery.value.toLowerCase().trim().split(/\s+/);
-
     return clonedPuzzles
+      .filter(puzzle => {
+        return !searchRegexParts.value.length || searchRegexParts.value.every(searchRegexPart => {
+          const regex = new RegExp(searchRegexPart, 'i');
+
+          return (
+            regex.test(puzzle.author || '') ||
+            regex.test(puzzle.rules || '') ||
+            regex.test(`${puzzle.originalIndex + 1}. ${puzzle.title || ''}`)
+          );
+        });
+      })
       .map(puzzle => {
-        const highlightedTitle = highlightMatch(puzzle.title || '', searchQuery.value);
-        const highlightedAuthor = highlightMatch(puzzle.author || '', searchQuery.value);
-        const highlightedRules = highlightMatch(formatRules(puzzle.rules), searchQuery.value);
-        const highlightedIndex = highlightMatch(`${puzzle.originalIndex + 1}.`, searchQuery.value);
-        const highlightIndexAndTitle = highlightMatch(`${puzzle.originalIndex + 1}. ${puzzle.title}`, searchQuery.value);
+        const highlightedTitle = highlightMatch(puzzle.title || '');
+        const highlightedAuthor = highlightMatch(puzzle.author || '');
+        const highlightedRules = formatRules(highlightMatch(puzzle.rules || ''));
+        const highlightedIndex = highlightMatch(`${puzzle.originalIndex + 1}.`);
 
         return {
           ...puzzle,
@@ -135,25 +133,7 @@
           highlightedAuthor,
           highlightedRules,
           highlightedIndex,
-          highlightIndexAndTitle
         };
-      })
-      .filter(puzzle => {
-        return tokens.every(token => {
-          const title = puzzle.title ? puzzle.title.toLowerCase() : '';
-          const author = puzzle.author ? puzzle.author.toLowerCase() : '';
-          const rules = puzzle.rules ? puzzle.rules.toLowerCase() : '';
-          const indexString = `${puzzle.originalIndex + 1}.`;
-          const indexAndTitle = `${puzzle.originalIndex + 1}. ${puzzle.title}`.toLowerCase();
-
-          return (
-            title.includes(token) ||
-            author.includes(token) ||
-            rules.includes(token) ||
-            indexString.includes(token) ||
-            indexAndTitle.includes(token)
-          );
-        });
       })
       .sort((a, b) => a.originalIndex - b.originalIndex);
   });
@@ -169,7 +149,7 @@
   function showPuzzle(puzzleIndex) {
     const puzzle = puzzles[puzzleIndex];
     searchQuery.value = `${puzzleIndex + 1}. ${puzzle.title}`;
-    
+
     openPanels.value = { [puzzleIndex]: [0] }; // Automatically opens the rules panel
   }
 </script>
