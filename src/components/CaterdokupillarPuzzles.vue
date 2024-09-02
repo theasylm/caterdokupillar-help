@@ -23,7 +23,7 @@
       </v-row>
     </v-container>
   </v-sheet>
-  <v-sheet class="d-flex flex-wrap bg-surface-variant">
+  <v-sheet class="d-flex flex-wrap bg-surface-variant" id="puzzles">
     <v-sheet class="ma-2 pa-2" elevation="5" rounded="true" v-for="(puzzle, index) in filteredPuzzles" :key="index" width="400">
       <div style="text-align: center;">
         <h3 v-html="`${puzzle.highlightedIndex} ${puzzle.highlightedTitle}`"></h3>
@@ -159,5 +159,8 @@
   }
   .margin-bottom {
     margin-bottom: 1.5rem;
+  }
+  #puzzles .v-sheet {
+    background: #e0e0e0;
   }
 </style>
