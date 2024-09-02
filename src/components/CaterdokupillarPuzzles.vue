@@ -96,62 +96,66 @@
   const clonedPuzzles =  puzzles.map((puzzle, index) => ({ ...puzzle, originalIndex: index }));
 
   const highlightMatch = (text, query) => {
-    const escapedQuery = escapeRegExp(query);
-    const regex = new RegExp(`(${escapedQuery})`, 'gi');
-    return text.replace(regex, '<mark>$1</mark>');
+    const tokens = query.toLowerCase().trim().split(/\s+/);
+    if (tokens.length === 0) return text;
+
+    tokens.forEach(token => {
+      const escapedToken = escapeRegExp(token);
+      const regex = new RegExp(`(${escapedToken})`, 'gi');
+      text = text.replace(regex, '<mark>$1</mark>');
+    });
+
+    return text;
   };
 
   const filteredPuzzles = computed(() => {
-  if (!searchQuery.value || !searchQuery.value.trim()) {
-    return clonedPuzzles.map(puzzle => ({
-      ...puzzle,
-      highlightedTitle: puzzle.title,
-      highlightedAuthor: puzzle.author,
-      highlightedRules: formatRules(puzzle.rules),
-      highlightedIndex: `${puzzle.originalIndex + 1}.`
-    })).sort((a, b) => a.originalIndex - b.originalIndex);
-  }
-
-  const searchLower = searchQuery.value.toLowerCase().trim();
-
-  return clonedPuzzles
-    .map(puzzle => {
-      const title = puzzle.title ? puzzle.title.toLowerCase() : '';
-      const author = puzzle.author ? puzzle.author.toLowerCase() : '';
-      const rules = puzzle.rules ? puzzle.rules.toLowerCase() : '';
-      const indexString = `${puzzle.originalIndex + 1}.`;
-
-      const highlightedTitle = highlightMatch(puzzle.title || '', searchLower);
-      const highlightedAuthor = highlightMatch(puzzle.author || '', searchLower);
-      const highlightedRules = highlightMatch(formatRules(puzzle.rules), searchLower);
-      const highlightedIndex = highlightMatch(indexString, searchLower);
-      const highlightIndexAndTitle = highlightMatch(indexString + ' ' + puzzle.title)
-
-      return {
+    if (!searchQuery.value || !searchQuery.value.trim()) {
+      return clonedPuzzles.map(puzzle => ({
         ...puzzle,
-        highlightedTitle,
-        highlightedAuthor,
-        highlightedRules,
-        highlightedIndex,
-        highlightIndexAndTitle
-      };
-    })
-    .filter(puzzle => {
-      const title = puzzle.title ? puzzle.title.toLowerCase() : '';
-      const author = puzzle.author ? puzzle.author.toLowerCase() : '';
-      const rules = puzzle.rules ? puzzle.rules.toLowerCase() : '';
-      const indexString = `${puzzle.originalIndex + 1}.`;
-      const indexAndTitle = `${puzzle.originalIndex + 1}. ${puzzle.title}`.toLowerCase();
+        highlightedTitle: puzzle.title,
+        highlightedAuthor: puzzle.author,
+        highlightedRules: formatRules(puzzle.rules),
+        highlightedIndex: `${puzzle.originalIndex + 1}.`
+      })).sort((a, b) => a.originalIndex - b.originalIndex);
+    }
 
-      return (
-        title.includes(searchLower) ||
-        author.includes(searchLower) ||
-        rules.includes(searchLower) ||
-        indexString.includes(searchLower) || 
-        indexAndTitle.includes(searchLower)
-      );
-    })
-    .sort((a, b) => a.originalIndex - b.originalIndex);
+    const tokens = searchQuery.value.toLowerCase().trim().split(/\s+/);
+
+    return clonedPuzzles
+      .map(puzzle => {
+        const highlightedTitle = highlightMatch(puzzle.title || '', searchQuery.value);
+        const highlightedAuthor = highlightMatch(puzzle.author || '', searchQuery.value);
+        const highlightedRules = highlightMatch(formatRules(puzzle.rules), searchQuery.value);
+        const highlightedIndex = highlightMatch(`${puzzle.originalIndex + 1}.`, searchQuery.value);
+        const highlightIndexAndTitle = highlightMatch(`${puzzle.originalIndex + 1}. ${puzzle.title}`, searchQuery.value);
+
+        return {
+          ...puzzle,
+          highlightedTitle,
+          highlightedAuthor,
+          highlightedRules,
+          highlightedIndex,
+          highlightIndexAndTitle
+        };
+      })
+      .filter(puzzle => {
+        return tokens.every(token => {
+          const title = puzzle.title ? puzzle.title.toLowerCase() : '';
+          const author = puzzle.author ? puzzle.author.toLowerCase() : '';
+          const rules = puzzle.rules ? puzzle.rules.toLowerCase() : '';
+          const indexString = `${puzzle.originalIndex + 1}.`;
+          const indexAndTitle = `${puzzle.originalIndex + 1}. ${puzzle.title}`.toLowerCase();
+
+          return (
+            title.includes(token) ||
+            author.includes(token) ||
+            rules.includes(token) ||
+            indexString.includes(token) ||
+            indexAndTitle.includes(token)
+          );
+        });
+      })
+      .sort((a, b) => a.originalIndex - b.originalIndex);
   });
 
   function openAllPanels() {
