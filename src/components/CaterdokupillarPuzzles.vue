@@ -42,6 +42,13 @@
             <div v-html="filteredPuzzles[index].highlightedRules"></div>
           </v-expansion-panel-text>
         </v-expansion-panel>
+        <v-expansion-panel v-if="puzzle.originalIndex == 58" title="Hints">
+          <v-expansion-panel-text>
+            <div>Small: <span class="hidden-hint" id="hidden-hint-s" @click="unhideHint('hidden-hint-s')">Try to think "Outside the Box".</span></div>
+            <div>Medium: <span class="hidden-hint" id="hidden-hint-m" @click="unhideHint('hidden-hint-m')">Is there any other way, according to the rules, that the 19 clue can be satisfied?</span></div>
+            <div>Large: <span class="hidden-hint" id="hidden-hint-l" @click="unhideHint('hidden-hint-l')">The 19 has to look down, placing numbers outside the grid, ie more clues.</span></div>
+          </v-expansion-panel-text>
+        </v-expansion-panel>
         <v-expansion-panel title="Digits">
           <v-expansion-panel-text>
             <div v-html="formatDigits(filteredPuzzles[index].digits)"></div>
@@ -146,11 +153,15 @@
     });
   }
 
-  function showPuzzle(puzzleIndex) {
+  /*function showPuzzle(puzzleIndex) {
     const puzzle = puzzles[puzzleIndex];
     searchQuery.value = `${puzzleIndex + 1}. ${puzzle.title}`;
 
     openPanels.value = { [puzzleIndex]: [0] }; // Automatically opens the rules panel
+  }*/
+
+  function unhideHint(id) {
+    document.getElementById(id).classList.remove('hidden-hint')
   }
 </script>
 
@@ -169,5 +180,9 @@
   }
   .darker {
     background-color: #dedede;
+  }
+  .hidden-hint {
+    background-color: #000000;
+    cursor: pointer;
   }
 </style>
