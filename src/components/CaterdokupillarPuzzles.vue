@@ -31,12 +31,12 @@
     </v-container>
   </v-sheet>
   <v-sheet class="d-flex flex-wrap bg-surface-variant">
-    <v-sheet class="ma-2 pa-2" elevation="5" rounded="true" v-if="filteredPuzzles.length > 0" width="400" v-for="(puzzle,index) in filteredPuzzles" >
+    <v-sheet class="ma-2 pa-2 darker" elevation="5" rounded="true" v-if="filteredPuzzles.length > 0" width="400" v-for="(puzzle,index) in filteredPuzzles" >
       <div style="text-align: center;">
         <h3 v-html="`${filteredPuzzles[index].highlightedIndex} ${filteredPuzzles[index].highlightedTitle}`"></h3>
         <h3 v-html="`by ${filteredPuzzles[index].highlightedAuthor}`"></h3>
       </div>
-      <v-expansion-panels v-model="openPanels[filteredPuzzles[index].originalIndex]">
+      <v-expansion-panels v-model="openPanels[filteredPuzzles[index].originalIndex]" variant="accordion" multiple>
         <v-expansion-panel title="Rules">
           <v-expansion-panel-text>
             <div v-html="filteredPuzzles[index].highlightedRules"></div>
@@ -166,5 +166,8 @@
   }
   #puzzles .v-sheet {
     background: #e0e0e0;
+  }
+  .darker {
+    background-color: #dedede;
   }
 </style>
