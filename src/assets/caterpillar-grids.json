@@ -350,7 +350,7 @@
   {
     "title": "Outside the Box",
     "author": "angel shaaark",
-    "rules": "Normal 6x6 Sudoku rules apply. \n\nX-Sums (?): Clues outside the grid, or any value placed outside the grid, indicate the sum of the first X values seen, where X is the first seen value. These X-Sums (?) clues can see either to the left or downwards.",
+    "rules": "Normal 6x6 Sudoku rules apply. \n\nX-Sums (?): Any number placed outside the grid indicates the sum of the first X values seen, where X is the first seen value. These numbers can see either to the left or downwards.\n\nNote: in the accompanying help document are hints if you should need them.",
     "digits": "3415"
   },
   {
@@ -788,7 +788,7 @@
   {
     "title": "Wriggle Wroom",
     "author": "Chilly",
-    "rules": "Normal 6x6 Sudoku rules apply.\n\nMagic Labyrinth Sequence Snake: There is a single, non-branching, 1-cell wide, orthogonally-connected 'snake' in the grid. The snake may not touch itself orthogonally or diagonally.\n\nThe snake contains a potentially repeating sequence of three distinct digits, to be determined by the solver, called the Magic Labyrinth Sequence (MLS). The head of the snake is located below its tail. The MLS must appear in numerically increasing order from head to tail. For example, if the MLS is {2, 4, 6}, the ordered contents of the the snake could be: (head) 2 4 6 2 4 6 (tail).\n\nHowever, Digits not included in the MLS can appear anywhere along the snake. So the ML sequence doesn't need to start or end exactly at the head or tail. For example, another valid snake, using the same MLS of {2, 4, 6}, could be: (head) 5 3 2 4 6 5 1 2 5 1 4 1 6 1 (tail).\n\nNon-consecutive dots: Digits in cells separated by red dots must be non-consecutive. Additionally, the snake must take exactly one of the cells separated by red dots.\n\nRenban Lines: Digits on a purple line form a set of non-repeating, consecutive digits in any order.",
+    "rules": "Normal 6x6 Sudoku rules apply.\n\nMagic Labyrinth Sequence Snake: There is a single, non-branching, 1-cell wide, orthogonally-connected 'snake' in the grid. The snake may not touch itself orthogonally or diagonally.\n\nThe snake contains a potentially repeating sequence of three distinct digits, to be determined by the solver, called the Magic Labyrinth Sequence (MLS). The head of the snake is located below its tail. The MLS must appear in numerically increasing order from head to tail. For example, if the MLS is {2, 4, 6}, the ordered contents of the the snake could be: (head) 2 4 6 2 4 6 (tail).\n\nHowever, Digits not included in the MLS can appear anywhere along the snake. So the ML sequence doesn't need to start or end exactly at the head or tail. For example, another valid snake, using the same MLS of {2, 4, 6}, could be: (head) 5 3 2 4 6 5 1 2 5 1 4 1 6 1 (tail).\n\nNon-consecutive dots: Digits in cells separated by red dots must be non-consecutive. Additionally, the snake must visit exactly one of the cells separated by red dots.\n\nRenban Lines: Digits on a purple line form a set of non-repeating, consecutive digits in any order. Additionally, the snake visits exactly one of every two adjacent cells along the line.",
     "digits": "6351"
   },
   {
@@ -1098,9 +1098,9 @@
     "digits": "1534"
   },
   {
-    "title": "MOD-Euler",
+    "title": "Pay Attention, residue class!",
     "author": "Dr Logic",
-    "rules": "Normal 6x6 Sudoku rules apply.\n\nDigits in cages sum to the marked total MOD 3.\nMod 3 Cages: The remainder of the division of the sum of the digits in cages by 3 is given in the top left.  In other words, digits in cages sum to the value in the top left when that sum is given in mod 3.  \n\nModular Lines: Any three adjacent digits along a line have a distinct remainder when dividing by 3. Digits that share a remainder are (1, 4); (2, 5); (3, 6). Digits may repeat on these lines if allowed by other rules.\n\nKropki Dots: Digits separated by a white dot are consecutive. Not all dots are necessarily given.",
+    "rules": "Normal 6x6 Sudoku rules apply.\n\nMod 3 Cages: The clue in a cage is the sum of digits in that cage modulo 3. In other words, if you divide the sum of the digits in a cage by 3, the remainder will be equal to the cage clue.\n\nModular Lines: Any three adjacent digits along a teal line have a distinct remainder when dividing by 3. Digits that share a remainder are (1, 4); (2, 5); (3, 6). Digits may repeat on these lines if allowed by other rules.\n\nKropki Dots: Digits separated by a white dot are consecutive. Not all dots are necessarily given.\n\n\n\n",
     "digits": "2351"
   },
   {
