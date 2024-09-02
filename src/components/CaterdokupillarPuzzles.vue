@@ -51,7 +51,7 @@
 
   const searchQuery = ref('');
   const openPanels = ref(puzzles.map(() => [0]));
-  
+
   // Utility function to escape special characters in a regex pattern
   function escapeRegExp(string) {
     return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -73,7 +73,7 @@
   function rulesKey(index) {
     return `rules-${index}`
   }
-  
+
   function digitsKey(index) {
     return `digits-${index}`
   }
@@ -86,60 +86,49 @@
 
   const clonedPuzzles =  puzzles.map((puzzle, index) => ({ ...puzzle, originalIndex: index }));
 
-  const highlightMatch = (text, query) => {
-    const escapedQuery = escapeRegExp(query);
-    const regex = new RegExp(`(${escapedQuery})`, 'gi');
+  const searchRegexParts = computed(() => {
+    return searchQuery.value.split(' ').filter(s => s !== '').map(escapeRegExp);
+  });
+
+  const highlightMatch = (text) => {
+    if (!searchRegexParts.value.length) {
+      return text;
+    }
+
+    const regex = new RegExp(`(${searchRegexParts.value.join('|')})`, 'gi');
     return text.replace(regex, '<mark>$1</mark>');
   };
 
   const filteredPuzzles = computed(() => {
-  if (!searchQuery.value || !searchQuery.value.trim()) {
-    return clonedPuzzles.map(puzzle => ({
-      ...puzzle,
-      highlightedTitle: puzzle.title,
-      highlightedAuthor: puzzle.author,
-      highlightedRules: formatRules(puzzle.rules),
-      highlightedIndex: `${puzzle.originalIndex + 1}.`
-    })).sort((a, b) => a.originalIndex - b.originalIndex);
-  }
+    return clonedPuzzles
+      .filter(puzzle => {
+        return !searchRegexParts.value.length || searchRegexParts.value.every(searchRegexPart => {
+          const regex = new RegExp(searchRegexPart, 'i');
 
-  const searchLower = searchQuery.value.toLowerCase().trim();
+          return (
+            regex.test(puzzle.title || '') ||
+            regex.test(puzzle.author || '') ||
+            regex.test(puzzle.rules || '') ||
+            regex.test(`${puzzle.originalIndex + 1}.`)
+          );
+        });
+      })
+      .map(puzzle => {
+        const highlightedTitle = highlightMatch(puzzle.title || '');
+        const highlightedAuthor = highlightMatch(puzzle.author || '');
+        const highlightedRules = formatRules(highlightMatch(puzzle.rules || ''));
+        const highlightedIndex = highlightMatch(`${puzzle.originalIndex + 1}.`);
 
-  return clonedPuzzles
-    .map(puzzle => {
-      const title = puzzle.title ? puzzle.title.toLowerCase() : '';
-      const author = puzzle.author ? puzzle.author.toLowerCase() : '';
-      const rules = puzzle.rules ? puzzle.rules.toLowerCase() : '';
-      const indexString = `${puzzle.originalIndex + 1}.`;
-
-      const highlightedTitle = highlightMatch(puzzle.title || '', searchLower);
-      const highlightedAuthor = highlightMatch(puzzle.author || '', searchLower);
-      const highlightedRules = highlightMatch(formatRules(puzzle.rules), searchLower);
-      const highlightedIndex = highlightMatch(indexString, searchLower);
-
-      return {
-        ...puzzle,
-        highlightedTitle,
-        highlightedAuthor,
-        highlightedRules,
-        highlightedIndex,
-      };
-    })
-    .filter(puzzle => {
-      const title = puzzle.title ? puzzle.title.toLowerCase() : '';
-      const author = puzzle.author ? puzzle.author.toLowerCase() : '';
-      const rules = puzzle.rules ? puzzle.rules.toLowerCase() : '';
-      const indexString = `${puzzle.originalIndex + 1}.`;
-
-      return (
-        title.includes(searchLower) ||
-        author.includes(searchLower) ||
-        rules.includes(searchLower) ||
-        indexString.includes(searchLower)
-      );
-    })
-    .sort((a, b) => a.originalIndex - b.originalIndex);
-});
+        return {
+          ...puzzle,
+          highlightedTitle,
+          highlightedAuthor,
+          highlightedRules,
+          highlightedIndex,
+        };
+      })
+      .sort((a, b) => a.originalIndex - b.originalIndex);
+  });
 
   function openAllPanels() {
     filteredPuzzles.value.forEach(puzzle => {
