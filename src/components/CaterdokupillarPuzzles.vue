@@ -96,7 +96,7 @@
   const clonedPuzzles =  puzzles.map((puzzle, index) => ({ ...puzzle, originalIndex: index }));
 
   const searchRegexParts = computed(() => {
-    return searchQuery.value.split(' ').filter(s => s !== '').map(escapeRegExp);
+    return (searchQuery.value || '').split(' ').filter(s => s !== '').map(escapeRegExp);
   });
 
   const highlightMatch = (text) => {
