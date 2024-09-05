@@ -10,7 +10,7 @@
     </map> -->
 
     <p class="margin-bottom">This document is intended to assist you in completing the Caterdokupillar. Start in the top left, and as each 6x6 puzzle is completed, 4 digits will automatically carry over as givens for the next puzzle. Read the rules carefully for each puzzle, as many contain variants.</p>
-    <p>Furthermore, if you get stuck on a particular puzzle, don't fret, as that's where this document comes in. It not only contains the rules for each puzzle, but most importantly, it has the digits you need for the next puzzle available for viewing.</p>
+    <p class="margin-bottom">Furthermore, if you get stuck on a particular puzzle, don't fret, as that's where this document comes in. It not only contains the rules for each puzzle, but most importantly, it has the digits you need for the next puzzle available for viewing.</p>
     <p>Important note: If a puzzle requires you to enter digits outside the grid, use center marking, not normal digits. This is to ensure the answer checker works. Also note that if you accidentally put a normal digit anywhere other than in a grid, the answer check will break.</p>
     <v-container max-width="100%">
       <v-row justify="center" wrap>
