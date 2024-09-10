@@ -53,7 +53,7 @@
         <v-expansion-panel v-if="imageIds.includes(filteredPuzzles[index].originalIndex + 1)" title="Example Image">
           <v-expansion-panel-text>
             <img 
-              :src="`./assets/${filteredPuzzles[index].originalIndex + 1}.png`"  
+              :src="`/caterdokupillar-help/assets/${filteredPuzzles[index].originalIndex + 1}.png`"  
               width="90%" style="cursor: pointer;" 
               @click="openImageModal(`/caterdokupillar-help/assets/${filteredPuzzles[index].originalIndex + 1}.png`)" />
           </v-expansion-panel-text>
