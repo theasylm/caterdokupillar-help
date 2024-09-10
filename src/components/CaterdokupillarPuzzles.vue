@@ -50,6 +50,14 @@
             <div>Large: <span class="hidden-hint" id="hidden-hint-l" @click="unhideHint('hidden-hint-l')">The 19 has to look down, placing numbers outside the grid, ie more clues.</span></div>
           </v-expansion-panel-text>
         </v-expansion-panel>
+        <v-expansion-panel v-if="imageIds.includes(filteredPuzzles[index].originalIndex + 1)" title="Example Image">
+          <v-expansion-panel-text>
+            <img 
+              :src="`./assets/${filteredPuzzles[index].originalIndex + 1}.png`"  
+              width="90%" style="cursor: pointer;" 
+              @click="openImageModal(`./assets/${filteredPuzzles[index].originalIndex + 1}.png`)" />
+          </v-expansion-panel-text>
+        </v-expansion-panel>
         <v-expansion-panel title="Digits">
           <v-expansion-panel-text>
             <div v-html="formatDigits(filteredPuzzles[index].digits)"></div>
@@ -58,6 +66,15 @@
       </v-expansion-panels>
     </v-sheet>
   </v-sheet>
+
+  <!-- Image Modal -->
+  <v-dialog v-model="isImageModalOpen" max-width="90%">
+    <v-card>
+      <v-card-text>
+        <v-img :src="selectedImageSrc" max-height="90%" contain></v-img>
+      </v-card-text>
+    </v-card>
+  </v-dialog>
 </template>
 
 <script setup>
@@ -66,6 +83,13 @@
 
   const searchQuery = ref('');
   const openPanels = ref(puzzles.map(() => [0]));
+  const isImageModalOpen = ref(false);
+  const selectedImageSrc = ref('');
+
+  function openImageModal(imageSrc) {
+    selectedImageSrc.value = imageSrc;
+    isImageModalOpen.value = true;
+  }
 
   // Utility function to escape special characters in a regex pattern
   function escapeRegExp(string) {
@@ -102,6 +126,8 @@
   }
 
   const clonedPuzzles =  puzzles.map((puzzle, index) => ({ ...puzzle, originalIndex: index }));
+
+  const imageIds = [3,6,12,13,18,20,25,28,46,48,50,53,54,57,60,62,66,69,70,77,78,93,142]
 
   const searchRegexParts = computed(() => {
     return (searchQuery.value || '').split(' ').filter(s => s !== '').map(escapeRegExp);
