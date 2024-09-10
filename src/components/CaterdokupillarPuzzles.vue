@@ -55,7 +55,7 @@
             <img 
               :src="`./assets/${filteredPuzzles[index].originalIndex + 1}.png`"  
               width="90%" style="cursor: pointer;" 
-              @click="openImageModal(`./assets/${filteredPuzzles[index].originalIndex + 1}.png`)" />
+              @click="openImageModal(`/caterdokupillar-help/assets/${filteredPuzzles[index].originalIndex + 1}.png`)" />
           </v-expansion-panel-text>
         </v-expansion-panel>
         <v-expansion-panel title="Digits">
