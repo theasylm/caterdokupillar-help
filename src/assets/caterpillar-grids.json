@@ -2,7 +2,7 @@
   {
     "title": "Face of Eternity",
     "author": "theasylm",
-    "rules": "Normal 6x6 Sudoku rules apply. Place the digits 1-6 exactly once in every row, column, and 2x3 box.\n\nNormal Japanese Sums rules apply. Colors used in this puzzle are Green, Red, Black, Yellow. For best results, remove all unshaded marking you have done once completed.\n\nJapanese Sums rules: The squares outside the grid indicate the order of the runs of contiguous cells that must be shaded the color of the clue. The number in the square indicates the sum of the cells in the run. There must be at least one unshaded cell between runs of the same color, but that is not required for runs of different colors. All shaded runs are given. \n",
+    "rules": "Normal 6x6 Sudoku rules apply. Place the digits 1-6 exactly once in every row, column, and 2x3 box.\n\nJapanese Sums: The squares outside the grid indicate the order of the runs of contiguous cells that must be shaded the color of the clue. The number in the square indicates the sum of the cells in the run. All shaded runs are given. \n\nColors used in this puzzle are Green, Red, Black, Yellow. For best results, remove all unshaded marking you have done once completed.",
     "digits": "5623"
   },
   {
@@ -32,7 +32,7 @@
   {
     "title": "Moon-Sun Caterdokupillar ",
     "author": "Math Pesto",
-    "rules": "Normal 6x6 Sudoku rules apply.\n\nDraw a non-branching, non-intersecting loop that visits each box exactly once. Within each box, the loop either passes through all moons and no suns, or all suns and no moons. The loop cannot pass through the same type of clue in two consecutively used regions. \n\nThe loop acts as a German Whispers line: Adjacent digits along the green lines must have a difference of at least 3.",
+    "rules": "Normal 6x6 Sudoku rules apply.\n\nDraw a non-branching, non-intersecting orthogonally traveling loop that visits each box exactly once. Within each box, the loop either passes through all moons and no suns, or all suns and no moons. The loop cannot pass through the same type of clue in two consecutively used regions. The loop acts as a German Whispers line\n\nGerman Whispers line: Adjacent digits along these lines must have a difference of at least 3.",
     "digits": "5346"
   },
   {
@@ -44,7 +44,7 @@
   {
     "title": "Caterdokupillar X-Cages",
     "author": "kuraban",
-    "rules": "Normal 6x6 Sudoku rules apply.\n\nBYO Killer: Draw killer cages into the grid so that each cage contains exactly one clued cell and cages don't overlap. The clued cell must end up as the left-most cell of the top row of the cage and the digit in the circle indicates the amount of cells that the cage it's in contains. Digits in killer cages cannot repeat and sum to the value in the top left of the clued cell. ",
+    "rules": "Normal 6x6 Sudoku rules apply.\n\nBYO Killer: Draw killer cages into the grid so that each cage contains exactly one clued cell and cages don't overlap. The clued cell must end up as the left-most cell of the top row of the cage and the digit in the circle indicates the amount of cells that the cage it's in contains. Digits in killer cages cannot repeat and sum to the value in the top left of the clued cell.",
     "digits": "1536"
   },
   {
@@ -86,7 +86,7 @@
   {
     "title": "Sum or Product",
     "author": "James Sinclair",
-    "rules": "Normal 6x6 Sudoku rules apply.\n\nSum or Product Cages: Digits in cages cannot repeat and either sum or multiply to the value in the top left (or possibly both).\n\nThis rule does not apply to the cage in r6c2 from the previous puzzle.",
+    "rules": "Normal 6x6 Sudoku rules apply.\n\nSum or Product Cages: Digits in cages cannot repeat and either sum or multiply to the value in the top left (or possibly both).",
     "digits": "2463"
   },
   {
@@ -372,9 +372,9 @@
     "digits": "4623"
   },
   {
-    "title": "If at first you don't succeed",
+    "title": "Simple as abcde15",
     "author": "Memeristor",
-    "rules": "Normal 6x6 sudoku rules apply.\n\nBYO Repetition Sum Lines: Draw lines in the grid that pass through the values between cells. These values indicate the sum of the digits along the line. Lines do not branch, nor do they intersect with themselves or other lines. Each digit on a line must appear at least twice on it. The digit may repeat as many times as allowed by other rules.",
+    "rules": "Normal 6x6 sudoku rules apply.\n\nNumbered rooms: Clues outside the grid indicate the digit which has to be placed in the Nth cell in the corresponding direction, where N is the digit placed in the first cell in that direction.\n\nEncrypted: Each instance of the same letter refers to the same digit and each different letter corresponds to a different digit.",
     "digits": "1326"
   },
   {
@@ -404,7 +404,7 @@
   {
     "title": "Weird, Bad, Spots",
     "author": "rockratzero",
-    "rules": "Normal 6x6 Sudoku rules apply.\n\nKropki Dots: Digits separated by a white dot are consecutive. Digits separated by a black dot have a 1:2 ratio. Not all dots are necessarily given.\n\nLittle Killer: Numbers outside the grid are the sum of the digits pointed to along the indicated diagonal, WITHIN this 6x6. Digits are allowed to repeat along those diagonals as normally allowed by the other rules.\nThe values of the clues abide by the Kropki Dots rules and must be deduced by the solver. ",
+    "rules": "Normal 6x6 Sudoku rules apply.\n\nKropki Dots: Digits separated by a white dot are consecutive. Digits separated by a black dot have a 1:2 ratio. Not all dots are necessarily given.\n\nLittle Killer: Numbers outside the grid are the sum of the digits pointed to along the indicated diagonal, WITHIN this 6x6. Digits are allowed to repeat along those diagonals as normally allowed by the other rules.\nThe values of the clues abide by the Kropki Dots rules and must be deduced by the solver.",
     "digits": "3512"
   },
   {
@@ -770,7 +770,7 @@
   {
     "title": "6x6 Full Rank X-Sums",
     "author": "jonn",
-    "rules": "Normal 6x6 Sudoku rules apply.\n\nFull Rank: Each row represents two 6-digit numbers, one number reading left-to-right and the other number right-to-left, the same is true for each column (top-to-bottom and bottom-to-top), that gives 36 numbers in total. For example, if row 6 was 123456, this would represent the numbers, reading left-to-right, one hundred twenty-three thousand, four hundred fifty-six and, reading right-to-left, six hundred fifty-four thousand, three hundred twenty-one. Clues outside the grid indicate the numerical 'rank' of the 6-digit number in that row or column from that direction, with 1 being the lowest and 36 being the highest.\n\nX-Sums: Digits outside the grid indicate the sum of the first X digits, where X is the digit in the closest cell to the clue.\n\nFull-Rank-X-Sums Duality: Clues outside the grid are both full rank and x-sums clues. All clues adhere to both of the specified rules above. ",
+    "rules": "Normal 6x6 Sudoku rules apply.\n\nFull Rank: Each row represents two 6-digit numbers, one number reading left-to-right and the other number right-to-left, the same is true for each column (top-to-bottom and bottom-to-top), that gives 24 numbers in total. For example, if row 6 was 123456, this would represent the numbers, reading left-to-right, one hundred twenty-three thousand, four hundred fifty-six and, reading right-to-left, six hundred fifty-four thousand, three hundred twenty-one. Clues outside the grid indicate the numerical 'rank' of the 6-digit number in that row or column from that direction, with 1 being the lowest and 24 being the highest.\n\nX-Sums: Digits outside the grid indicate the sum of the first X digits, where X is the digit in the closest cell to the clue.\n\nFull-Rank-X-Sums Duality: Clues outside the grid are both full rank and x-sums clues. All clues adhere to both of the specified rules above. ",
     "digits": "4612"
   },
   {
@@ -866,7 +866,7 @@
   {
     "title": "caterdokupillar pozl",
     "author": "PulverizingPancake",
-    "rules": "Normal 6x6 Sudoku rules apply.\n\nZipper Lines: Lavender lines in the grid are zipper lines. Digits equidistant from the line's center must sum to the same value. If a zipper line has an odd number of cells, the central cell's digit defines this sum. Digits may repeat on these lines if allowed by other sudoku rules. For example, a valid zipper line could be 3146253 which has a sum value of 6.",
+    "rules": "Normal 6x6 sudoku rules apply.\n\nZipper Lines: Lavender lines in the grid are zipper lines. Digits equidistant from the line's center must sum to the same value. If a zipper line has an odd number of cells, the central cell's digit defines this sum. Digits may repeat on these lines if allowed by other sudoku rules. For example, a valid zipper line could be 3146253 which has a sum value of 6.",
     "digits": "1526"
   },
   {
@@ -1130,6 +1130,6 @@
   {
     "title": "The Rear End",
     "author": "Panthera",
-    "rules": "Normal 6x6 Sudoku rules apply. \n\nNormal Japanese Sums rules apply. Colors used in this puzzle are Green, Red, Yellow. For best results, remove all unshaded marking you have done once completed.\n\nJapanese Sums rules: the squares outside the grid indicate the order of the runs of contiguous cells that must be shaded the color of the clue. The number in the square indicates the sum of the cells in the run. There must be at least one unshaded cell between runs of the same color, but that is not required for runs of different colors. All shaded runs are given."
+    "rules": "Normal 6x6 Sudoku rules apply. \n\nJapanese Sums: the squares outside the grid indicate the order of the runs of contiguous cells that must be shaded the color of the clue. The number in the square indicates the sum of the cells in the run. All shaded runs are given.\n\nColors used in this puzzle are Green, Red, Yellow. For best results, remove all unshaded marking you have done once completed."
   }
 ]
