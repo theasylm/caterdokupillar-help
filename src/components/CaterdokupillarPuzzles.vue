@@ -21,7 +21,7 @@
             SudokuPad links
           </v-expansion-panel-title>
           <v-expansion-panel-text>
-            <ul>
+            <ul class="link-list">
               <li><a href="https://beta.sudokupad.app/memeristor/caterdokupillar?setting-nogrid=1&setting-largepuzzle=1" target="_blank">Whole puzzle</a></li>
               <li><a href="https://beta.sudokupad.app/memeristor/caterdokupillar1?setting-nogrid=1&setting-largepuzzle=1" target="_blank">Chunk 1</a></li>
               <li><a href="https://beta.sudokupad.app/memeristor/caterdokupillar2?setting-nogrid=1&setting-largepuzzle=1" target="_blank">Chunk 2</a></li>
