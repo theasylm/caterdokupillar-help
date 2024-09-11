@@ -602,7 +602,7 @@
   {
     "title": "Geradeweg Sudoku",
     "author": "Wessel Strijkstra/It's Stark Jr.!",
-    "rules": "Normal 6x6 Sudoku rules apply.\n\nGeradeweg: Using orthogonal lines, draw a non-intersecting loop through the centers of some cells that passes through every grey clue. Digits on every straight line segment that touches a clue must have a sum equal to the clue's value. In case of a ?, the value of that clue must be determined. ",
+    "rules": "Normal 6x6 Sudoku rules apply.\n\nGeradeweg: Using orthogonal lines, draw a non-intersecting loop through the centers of some cells that passes through every clued cell. Digits on every straight line segment that touches a clue must have a sum equal to the clue's value. In case of a ?, the value of that clue must be determined. ",
     "digits": "3621"
   },
   {
@@ -686,7 +686,7 @@
   {
     "title": "Doing Rounds",
     "author": "Clarke",
-    "rules": "Normal 6x6 Sudoku rules apply.\n\nArrow Loop: Draw a loop for Clarke to travel along counterclockwise, that starts and ends in his favorite spot, indicated by the cat. Clarke's loop must visit all the mint and lettuce.\nAs he goes, Clarke sniffs his surroundings, so the loop doesn't  intersects/crosses or touch itself orthogonally, but he may occasionally touch it diagonally.\nWhen Clarke first enters a row or column containing lettuce, he must travel directly to the cell containing lettuce and nom nom on it. The only lettuce in the grid is in row 2 column 3.\nWhen leaving a mint cell, Clarke rolls on his back and therefore must travel along a diagonal in any direction. In all other cases, he travels orthogonally.\n\nClarke's path consists entirely of arrows, starting with an arrow's circle, and then the digit(s) along the arrow (following the path counterclockwise as specified above). When an arrow ends, the next cell on the path becomes the next arrow's circle. All arrow circles consist of a single cell. His favorite spot is the first arrow's circle and not included on the last arrow at all. \n\nArrows: A digit in a circle is equal to the sum of the digits on the attached arrow. Digits are allowed to repeat along the arrows as normally allowed by other rules.",
+    "rules": "Normal 6x6 Sudoku rules apply.\n\nArrow Loop: Draw a loop for Clarke to travel along counterclockwise, that starts and ends in his favorite spot, indicated by the cat. Clarke's loop must visit all the mint and lettuce.\nAs he goes, Clarke sniffs his surroundings, so his loop doesn't  intersects/crosses or touch itself orthogonally, but his loop may occasionally touch itself diagonally.\nWhen Clarke first enters a row or column containing lettuce, he must travel directly to the cell containing lettuce and nom nom on it. The only lettuce in the grid is in row 2 column 3.\nWhen leaving a mint cell, Clarke rolls on his back and therefore must travel along a diagonal in any direction. In all other cases, his loop travels orthogonally.\n\nClarke's path consists entirely of arrows, starting with an arrow's circle, and then the digit(s) along the arrow (following the path counterclockwise as specified above). When an arrow ends, the next cell on the path becomes the next arrow's circle. All arrow circles consist of a single cell. His favorite spot is the first arrow's circle and not included on the last arrow at all. \n\nArrows: A digit in a circle is equal to the sum of the digits on the attached arrow. Digits are allowed to repeat along the arrows as normally allowed by other rules.",
     "digits": "6514"
   },
   {
