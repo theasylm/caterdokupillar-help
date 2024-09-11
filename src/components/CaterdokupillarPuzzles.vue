@@ -15,7 +15,7 @@
     <p class="margin-bottom">The SudokuPad desktop versions are controlled like so: to pan, right-click and drag; to zoom, scroll. Note the SudokuPad full version does have some lag to it, so you may prefer the chunks. Important note: If a puzzle requires you to enter digits outside the grid, use center marking, not normal digits. This is to ensure the answer checker works. Also note that if you accidentally put a normal digit anywhere other than in a grid, the answer check will break.</p>
     <p class="margin-bottom">The Penpa+ versions are only available in chunks. Important note: some of the URIs are too long to load the page. These are marked with a *. To access these that are too long, click the link, which will open a new tab and copy the URI to your clipboard. Then in the new tab, click the "Load" button and paste the URI into the box.</p>
     <v-sheet theme="light" width="400">
-      <v-expansion-panels>
+      <v-expansion-panels variant="accordion" multiple>
         <v-expansion-panel>
           <v-expansion-panel-title>
             SudokuPad links
@@ -278,6 +278,5 @@
   }
   .link-list {
     list-style: none;
-    margin-left: 1.5em;;
   }
 </style>
