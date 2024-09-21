@@ -110,7 +110,7 @@
   {
     "title": "Hint of Providence",
     "author": "Mormagli ",
-    "rules": "Normal 6x6 Sudoku rules apply.\n\nEntropic Lines:  Any three adjacent digits along a peach entropic line are from one each of low(1,2), medium(3,4), and high(5,6) digits. \n\nGerman Whispers Lines: Adjacent digits along the green line must have a difference of at least 3. ",
+    "rules": "Normal 6x6 Sudoku rules apply.\n\nEntropic Lines:  Any three adjacent digits along a peach entropic line are from one each of low(1,2), medium(3,4), and high(5,6) digits. \n\nGerman Whispers Lines: Adjacent digits along the green line must have a difference of at least 3. Crossing lines do not connect and all lines are straight.",
     "digits": "6524"
   },
   {
@@ -134,7 +134,7 @@
   {
     "title": "Narcisse",
     "author": "Christounet",
-    "rules": "Normal 6x6 Sudoku rules apply.\n\nKiller Cages: Digits in cages cannot repeat and the values of all cells in the cage sum to the number in the top left.\n\nMirrored digits: There are 6 mirrored digits hidden in the grid, exactly one in every row, column, and box. Every digit appears in a mirrored cell exactly once. For the purpose of killer cages, a digit X in a mirrored cell will have a value of 7-X. For example, the digit 1 would have a value of 6, and vice versa. ",
+    "rules": "Normal 6x6 Sudoku rules apply.\n\nKiller Cages: Digits in cages cannot repeat and the values of all cells in the cage sum to the number in the top left.\n\nMirrored digits: There are 6 mirrored digits hidden in the grid, exactly one in every row, column, and box. Every digit appears in a mirrored cell exactly once. For the purpose of killer cages, a digit X in a mirrored cell will have a value of 7-X. For example, the digit 1 would have a value of 6, and vice versa.",
     "digits": "2546"
   },
   {
@@ -302,7 +302,7 @@
   {
     "title": "tortie",
     "author": "jneen",
-    "rules": "Normal 6x6 Sudoku rules apply.\n\n* Digits may not repeat in cages.\n* Dots between cells indicate the difference in value between adjacent cells.\n* Dots with >1 indicate that the adjacent cells are non-consecutive.\n* The inequality sign (>) indicates the order of the adjacent cells.",
+    "rules": "Normal 6x6 sudoku rules apply.\n\nKiller Cages: Digits in cages cannot repeat.\n\nNon-consecutive dots: Digits in cells separated by red dots must be non-consecutive.\n\nDifference dots: Digits separated by a white dot with 2 indicate that the cells have a difference of 2.",
     "digits": "2416"
   },
   {
