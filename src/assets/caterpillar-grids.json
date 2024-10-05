@@ -260,7 +260,7 @@
   {
     "title": "Hangry",
     "author": "Nebuzaradan",
-    "rules": "Select exactly 6 digits from 1-9 and place them exactly once in every row, column and 2x3 box.\n\nX-Sums: Digits outside the grid indicate the sum of the first X digits, where X is the digit in the closest cell to the clue.\n'a' represents the same number in the whole puzzle, with '2a' being double that number.\n\nFor the 4 digits given to the next grid, treat any digits higher than 6 as the digits missing in the range of 1-6 in numerical order. For example, if the six digits used in the puzzle are 135679, the 7 will be treated as a 2, then the 9 will be treated as a 4 in the next grid.",
+    "rules": "Select exactly 6 digits from 1-9 and place them exactly once in every row, column and 2x3 box.\n\nX-Sums: Digits outside the grid indicate the sum of the first X digits, where X is the digit in the closest cell to the clue.\n'a' represents the same number in the whole puzzle, with '2a' being double that number.\n\nFor the 4 digits given to the next grid, treat any digits higher than 6 as the digits missing in the range of 1-6 in numerical order. For example, if the six digits used in the puzzle are 135679, the 7 will be treated as a 2, then the 9 will be treated as a 4 in the next grid. \n\nFor the answer check, this grid should only contain digits in the range 1-6 as explained above.",
     "digits": "3546"
   },
   {
