@@ -1,3 +1,4 @@
-.small-btn {
-  word-wrap: normal !important; 
+.input-start {
+    width: 100% !important;
+    min-width: 100% !important;
 }

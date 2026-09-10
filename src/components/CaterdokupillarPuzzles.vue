@@ -74,11 +74,11 @@
     </v-sheet>
     <v-container max-width="100%">
       <v-row justify="center" wrap>
-        <v-col cols="12" sm="8" md="6">
+        <v-col cols="12">
           <v-text-field
             v-model="searchQuery"
             label="Search puzzles by title, author, rules language or number"
-            class="mt-4" style="word-wrap: normal !important"
+            class="mt-4 input-start" style="word-wrap: normal !important"
             clearable
           ></v-text-field>
         </v-col>
