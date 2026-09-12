@@ -23,14 +23,70 @@
           </v-expansion-panel-title>
           <v-expansion-panel-text>
             <ul class="link-list">
-              <li><a href="https://beta.sudokupad.app/memeristor/caterdokupillar?setting-nogrid=1&setting-largepuzzle=1" target="_blank">Whole puzzle</a></li>
+              <li id="whole-puzzle"><a href="https://beta.sudokupad.app/memeristor/caterdokupillar?setting-nogrid=1&setting-largepuzzle=1" target="_blank">Whole puzzle</a></li>
+              <li>Chunks</li>
               <li><a href="https://beta.sudokupad.app/memeristor/caterdokupillar1?setting-nogrid=1&setting-largepuzzle=1" target="_blank">Chunk 1</a></li>
               <li><a href="https://beta.sudokupad.app/memeristor/caterdokupillar2?setting-nogrid=1&setting-largepuzzle=1" target="_blank">Chunk 2</a></li>
               <li><a href="https://beta.sudokupad.app/memeristor/caterdokupillar3?setting-nogrid=1&setting-largepuzzle=1" target="_blank">Chunk 3</a></li>
               <li><a href="https://beta.sudokupad.app/memeristor/caterdokupillar4?setting-nogrid=1&setting-largepuzzle=1" target="_blank">Chunk 4</a></li>
               <li><a href="https://beta.sudokupad.app/memeristor/caterdokupillar5?setting-nogrid=1&setting-largepuzzle=1" target="_blank">Chunk 5</a></li>
               <li><a href="https://beta.sudokupad.app/memeristor/caterdokupillar6?setting-nogrid=1&setting-largepuzzle=1" target="_blank">Chunk 6</a></li>
-              <li><a href="https://beta.sudokupad.app/memeristor/caterdokupillar7?setting-nogrid=1&setting-largepuzzle=1" target="_blank">Chunk 7</a></li>
+              <li id="final-chunk"><a href="https://beta.sudokupad.app/memeristor/caterdokupillar7?setting-nogrid=1&setting-largepuzzle=1" target="_blank" >Chunk 7</a></li>
+              <li>Vertical slices</li>
+              <li>
+              <a href="https://sudokupad.app/memeristor/smoldokupillar1?setting-nogrid=1&setting-largepuzzle=1" target="_blank" >Column 1</a></li>
+              <li>
+              <a href="https://sudokupad.app/memeristor/smoldokupillar2?setting-nogrid=1&setting-largepuzzle=1" target="_blank">Column 2</a></li>
+              <li>
+              <a href="https://sudokupad.app/memeristor/smoldokupillar3?setting-nogrid=1&setting-largepuzzle=1" target="_blank">Column 3</a></li>
+              <li>
+              <a href="https://sudokupad.app/memeristor/smoldokupillar4?setting-nogrid=1&setting-largepuzzle=1" target="_blank">Column 4</a></li>
+              <li>
+              <a href="https://sudokupad.app/memeristor/smoldokupillar5?setting-nogrid=1&setting-largepuzzle=1" target="_blank">Column 5</a></li>
+              <li>
+              <a href="https://sudokupad.app/memeristor/smoldokupillar6?setting-nogrid=1&setting-largepuzzle=1" target="_blank">Column 6</a></li>
+              <li>
+              <a href="https://sudokupad.app/memeristor/smoldokupillar7?setting-nogrid=1&setting-largepuzzle=1" target="_blank">Column 7</a></li>
+              <li>
+              <a href="https://sudokupad.app/memeristor/smoldokupillar8?setting-nogrid=1&setting-largepuzzle=1"  target="_blank">Column 8</a></li>
+              <li>
+              <a href="https://sudokupad.app/memeristor/smoldokupillar9?setting-nogrid=1&setting-largepuzzle=1" target="_blank">Column 9</a></li>
+              <li>
+              <a href="https://sudokupad.app/memeristor/smoldokupillar20?setting-nogrid=1&setting-largepuzzle=1" target="_blank">Column 10</a></li>
+              <li>
+              <a href="https://sudokupad.app/memeristor/smoldokupillar11?setting-nogrid=1&setting-largepuzzle=1" target="_blank">Column 11</a></li>
+              <li>
+              <a href="https://sudokupad.app/memeristor/smoldokupillar12?setting-nogrid=1&setting-largepuzzle=1" target="_blank">Column 12</a></li>
+              <li>
+              <a href="https://sudokupad.app/memeristor/smoldokupillar13?setting-nogrid=1&setting-largepuzzle=1" target="_blank">Column 13</a></li>
+              <li>
+              <a href="https://sudokupad.app/memeristor/smoldokupillar14?setting-nogrid=1&setting-largepuzzle=1" target="_blank">Column 14</a></li>
+              <li>
+              <a href="https://sudokupad.app/memeristor/smoldokupillar15?setting-nogrid=1&setting-largepuzzle=1" target="_blank">Column 15</a></li>
+              <li>
+              <a href="https://sudokupad.app/memeristor/smoldokupillar16?setting-nogrid=1&setting-largepuzzle=1" target="_blank">Column 16</a></li>
+              <li>
+              <a href="https://sudokupad.app/memeristor/smoldokupillar17?setting-nogrid=1&setting-largepuzzle=1" target="_blank">Column 17</a></li>
+              <li>
+              <a href="https://sudokupad.app/memeristor/smoldokupillar18?setting-nogrid=1&setting-largepuzzle=1" target="_blank">Column 18</a></li>
+              <li>
+              <a href="https://sudokupad.app/memeristor/smoldokupillar19?setting-nogrid=1&setting-largepuzzle=1" target="_blank">Column 19</a></li>
+              <li>
+              <a href="https://sudokupad.app/memeristor/smoldokupillar20?setting-nogrid=1&setting-largepuzzle=1" target="_blank">Column 20</a></li>
+              <li>
+              <a href="https://sudokupad.app/memeristor/smoldokupillar21?setting-nogrid=1&setting-largepuzzle=1" target="_blank">Column 21</a></li>
+              <li>
+              <a href="https://sudokupad.app/memeristor/smoldokupillar22?setting-nogrid=1&setting-largepuzzle=1" target="_blank">Column 22</a></li>
+              <li>
+              <a href="https://sudokupad.app/memeristor/smoldokupillar23?setting-nogrid=1&setting-largepuzzle=1" target="_blank">Column 23</a></li>
+              <li>
+              <a href="https://sudokupad.app/memeristor/smoldokupillar24?setting-nogrid=1&setting-largepuzzle=1" target="_blank">Column 24</a></li>
+              <li>
+              <a href="https://sudokupad.app/memeristor/smoldokupillar25?setting-nogrid=1&setting-largepuzzle=1" target="_blank">Column 25</a></li>
+              <li>
+              <a href="https://sudokupad.app/memeristor/smoldokupillar26?setting-nogrid=1&setting-largepuzzle=1" target="_blank">Column 26</a></li>
+              <li>
+              <a href="https://sudokupad.app/memeristor/smoldokupillar27?setting-nogrid=1&setting-largepuzzle=1" target="_blank">Column 27</a></li>
             </ul>
           </v-expansion-panel-text>
         </v-expansion-panel>
