@@ -1,0 +1,47 @@
+Although many of my streams contain adult content, this series will not. I apologize profusely in advance if I let my tongue slip; I'm trying harder every day.
+
+As part of my regular routine, I play puzzle games. I intend for this to be a regular stream at 18:00 ET, with off days of Sunday and Wednesday. It will be called Brain Drain Refrain, as a nod to the original theasylm stream.
+
+To talk about the streams, suggest puzzles, and interact with the community, join TheAsylm Chat, my Discord server: https://discord.gg/wGFyx3ZJvJ
+
+TODAY'S GAMES ARE A SURPISE
+
+Game choices vary from day to day.
+
+HOW I PLAY
+
+I have two peculiarities to explain, plus one request.
+
+My request: please do not help me with the puzzles while I am solving them, unless I specifically ask for a hint. I am very happy to discuss them afterward, but I strongly prefer to receive no help, hints, or suggestions during the solve.
+
+First, for variety, in Wordle, Symble, Squidwordle, and similar games, I begin each solve with yesterday’s penultimate guess. I do not like to use the previous day's answer because of its popularity, but I especially like the variety the rule gives.
+
+Second, not only do I play Wordle in Hard Mode, but I have also implemented a personal ruleset that mimics Hard Mode in Symble. Every guess must be a possible answer and must use all information gained so far. That includes placing known characters correctly and using only letters that remain legal under my current interpretation of each symbol.
+
+CUSTOM PUZZLES
+
+I very much enjoy solving custom puzzles and would love it if you sent me some.
+
+IMPORTANT: ALL CUSTOM PUZZLES MUST BE APPROVED BEFORE I SOLVE THEM ON STREAM.
+
+To generate a custom Wordle, go to: https://theasylm.github.io/wordlelator/
+To generate a custom Symble, go to: https://symble.app/. Click the calendar icon and choose Custom.
+To generate a custom Gauntletle, go to: https://theasylm.github.io/gauntletle/ and click New Custom.
+
+Submit custom Wordles here: https://forms.gle/w27djmBCUjjphSU66
+Submit custom Symbles here: https://forms.gle/t4B23tnh8nhmbRdk8
+Submit custom Gauntletles here: https://forms.gle/mYYsrQZCA7FP2qut5
+
+PERSONAL GOALS
+
+For Wordle, I am happy just to finish, though I start getting nervous after four guesses.
+
+For Symble, I try to solve it in three guesses. I am not disappointed by a four or anything else; three is simply what I aim for.
+
+For the Mini, from Sunday through Friday, my goal is to finish in under one minute, though I do not consider that necessary for a good solve. My personal best is absurdly fast. On Saturday, I relax that goal because the puzzle is larger.
+
+ABOUT SQUIDWORDLE
+
+Squidwordle can overwhelm you with possibilities because the only screening I performed was: “Are you five letters?” If not, the word was removed from the list. If so, it stayed.
+
+That means simple plurals and basic tense variants can appear and become stumbling blocks. This is compounded by recognizing that an S at the end is not merely possible—it is a serious threat.
